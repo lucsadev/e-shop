@@ -1,7 +1,11 @@
-import { Tabs } from "expo-router";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { Drawer } from "expo-router/drawer";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import "react-native-reanimated";
+import { Header } from "./../src/components/ui";
+import { queryAllProducts } from "@/src/db/queries/products";
+import { useProductsStore } from './../src/store';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -12,8 +16,12 @@ export {
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
+ const addProducts = useProductsStore.use.addProducts()
+
   useEffect(() => {
-    SplashScreen.hideAsync();
+    queryAllProducts()
+      .then((data) => data && addProducts(data))
+      .finally(() => SplashScreen.hideAsync());
   }, []);
 
   return <RootLayoutNav />;
@@ -21,14 +29,18 @@ export default function RootLayout() {
 
 function RootLayoutNav() {
   return (
-    <Tabs
-      screenOptions={{
-        headerTitleAlign: "center",
-        headerStyle: { elevation: 3, shadowColor: "black" },
-        tabBarStyle: { elevation: 3, shadowColor: "black" },
-      }}
-    >
-      <Tabs.Screen name="index" options={{ title: "Home" }} />
-    </Tabs>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <Drawer
+        screenOptions={{
+          headerTitleAlign: "center",
+          drawerActiveBackgroundColor: "transparent",
+          drawerActiveTintColor: '#50072488',                    
+          header: (props) => <Header {...props} />,
+        }}
+      >
+        <Drawer.Screen name="index" options={{ title: "Inicio" }} />
+        <Drawer.Screen name="profile" options={{ title: "Perfil" }} />
+      </Drawer>
+    </GestureHandlerRootView>
   );
 }

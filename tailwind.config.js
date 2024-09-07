@@ -8,7 +8,7 @@ module.exports = {
       colors: {
         border: '#E4E4E7',
         input: '#E4E4E7',
-        ring: '#155e75',
+        ring: '#50072488',
         background: '#F2F2F2',
         foreground: '#09090B',
         primary: {

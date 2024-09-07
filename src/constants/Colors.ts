@@ -1,4 +1,4 @@
-export const primaryColorLight = '#0e888877';
+export const primaryColorLight = '#50072488';
 export const primaryForegroundColor = '#000';
 
 /* export default {

@@ -11,6 +11,7 @@ export function TextInput(props: TextInputProps) {
     <DefaultTextInput
       mode="outlined"
       activeOutlineColor={primaryColorLight}
+      left={<DefaultTextInput.Icon icon="search" />}
       style={tw.style(`w-full h-9`, props.styles)}
       {...props}
     />
