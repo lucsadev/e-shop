@@ -1,6 +1,6 @@
 import { View, Text, FlatList } from "react-native";
 import type { NativeSyntheticEvent, NativeScrollEvent } from "react-native";
-import { tw } from "@/src/lib";
+import { tw } from "@/lib";
 import { useRef, useState } from "react";
 import { SlideItem } from "./SlideItem";
 import { SlidesDotsPagination } from "./SlidesDotsPagination";

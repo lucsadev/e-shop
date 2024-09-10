@@ -2,7 +2,7 @@ import { router, usePathname } from "expo-router";
 import { DrawerContentScrollView, DrawerItem, type DrawerContentComponentProps } from "@react-navigation/drawer";
 import { Image, Text, View } from "react-native";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
-import { tw } from "@/src/lib";
+import { tw } from "@/lib";
 import { LinearGradient } from "expo-linear-gradient";
 
 export const CustomDrawerContent = (props: DrawerContentComponentProps) => {

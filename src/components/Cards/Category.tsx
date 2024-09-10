@@ -1,6 +1,6 @@
-import { tw } from "@/src/lib";
-import { useProductsStore } from "@/src/store";
-import { CategoryType } from "@/src/types/DB";
+import { tw } from "@/lib";
+import { useProductsStore } from "@/store";
+import { CategoryType } from "@/types/DB";
 import { router, useNavigation } from "expo-router";
 import { Image, Pressable, Text, View } from "react-native";
 import { Card } from "react-native-paper";

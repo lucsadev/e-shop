@@ -1,4 +1,4 @@
-import { HomeScreen } from "@/src/views";
+import { HomeScreen } from "@/views";
 
 export default function HomePage() {
 

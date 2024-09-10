@@ -1,4 +1,4 @@
-import { primaryColorLight, primaryForegroundColor } from './src/constants/Colors';
+import { primaryColorLight, primaryForegroundColor } from '@/constants/Colors';
 const plugin = require("tailwindcss/plugin");
 const { transform } = require("typescript");
 

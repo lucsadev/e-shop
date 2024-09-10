@@ -1,6 +1,6 @@
 import { Drawer } from 'expo-router/drawer';
 import type { DrawerContentComponentProps } from '@react-navigation/drawer';
-import { CustomDrawerContent, Header } from '@/src/components/ui';
+import { CustomDrawerContent, Header } from '@/components/ui';
 
 
   

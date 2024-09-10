@@ -1,5 +1,5 @@
-import { tw as twrnc } from "@/src/lib";
-import { useProductsStore } from "@/src/store";
+import { tw as twrnc } from "@/lib";
+import { useProductsStore } from "@/store";
 import { Text, View } from "react-native";
 
 const { style: tw } = twrnc;

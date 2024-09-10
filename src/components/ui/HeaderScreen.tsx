@@ -2,9 +2,9 @@ import { View, Text } from "react-native";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Searchbar } from "react-native-paper";
-import { tw } from "@/src/lib";
+import { tw } from "@/lib";
 import { LinearGradient } from "expo-linear-gradient";
-import { useProductsStore } from "@/src/store";
+import { useProductsStore } from "@/store";
 import { router } from "expo-router";
 
 export function HeaderScreen() {

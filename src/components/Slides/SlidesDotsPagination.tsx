@@ -1,4 +1,4 @@
-import { tw } from "@/src/lib";
+import { tw } from "@/lib";
 import { Pressable, View } from "react-native";
 
 type Props = {

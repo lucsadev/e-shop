@@ -1,7 +1,7 @@
-import { supabase } from "@/src/db/supabase";
-import { ProductModel } from "@/src/models";
-import { IDataDB } from "@/src/store";
-import { IProductsResponse } from "@/src/types/DB";
+import { supabase } from "@/db/supabase";
+import { ProductModel } from "@/models";
+import { IDataDB } from "@/store";
+import { IProductsResponse } from "@/types/DB";
 
 export async function queryAllProducts(): Promise<IDataDB | null> {
   try {

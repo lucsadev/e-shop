@@ -1,5 +1,5 @@
-import { cloudinary } from "@/src/db/Cloudinary";
-import { tw } from "@/src/lib";
+import { cloudinary } from "@/db/Cloudinary";
+import { tw } from "@/lib";
 import { AdvancedImage } from "cloudinary-react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useWindowDimensions, View } from "react-native";

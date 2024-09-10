@@ -1,6 +1,6 @@
-import { CategoryCard, CategoryRoundedCard } from "@/src/components";
-import { tw } from "@/src/lib";
-import { useProductsStore } from "@/src/store";
+import { CategoryCard, CategoryRoundedCard } from "@/components";
+import { tw } from "@/lib";
+import { useProductsStore } from "@/store";
 import { View, ScrollView, Text } from "react-native";
 
 export function CategoriesScreen() {

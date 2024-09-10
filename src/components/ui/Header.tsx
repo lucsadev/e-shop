@@ -3,7 +3,7 @@ import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Searchbar } from "react-native-paper";
 import { useState } from "react";
-import { tw } from "@/src/lib";
+import { tw } from "@/lib";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "expo-router";
 import { DrawerActions } from "@react-navigation/native";

@@ -1,6 +1,6 @@
-import { GenderButtons, ProductCard } from "@/src/components";
-import { tw } from "@/src/lib";
-import { useProductsStore } from "@/src/store";
+import { GenderButtons, ProductCard } from "@/components";
+import { tw } from "@/lib";
+import { useProductsStore } from "@/store";
 import { useLocalSearchParams } from "expo-router";
 import { ScrollView, Text, View } from "react-native";
 

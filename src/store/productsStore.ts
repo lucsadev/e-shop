@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { devtools } from "zustand/middleware";
 import { CategoryType, ProductType } from "../types/DB";
 import { createSelectors } from "./createSelectors";
-import { IProduct } from "@/src/types/models";
+import { IProduct } from "@/types/models";
 
 export interface IDataDB {
   products: IProduct[];

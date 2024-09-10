@@ -1,9 +1,9 @@
 import Icon from "react-native-vector-icons/FontAwesome";
-import tw from "@/src/lib/tailwind";
+import { tw } from "@/lib";
 import { cva, type VariantProps } from "class-variance-authority";
 
 import { ActivityIndicator, Pressable, Text } from "react-native";
-import { colors, primaryColorLight } from "@/src/constants";
+import { colors, primaryColorLight } from "@/constants";
 
 type Props = {
   onPress: () => void;
@@ -78,32 +78,16 @@ export function Button(props: ButtonProps) {
     >
       <>
         {props.loading && (
-          <ActivityIndicator
-            size="small"
-            color={colors[(props.variant as keyof typeof colors) || "default"]}
-          />
+          <ActivityIndicator size="small" color={colors[(props.variant as keyof typeof colors) || "default"]} />
         )}
         {props.leftIcon && (
-          <Icon
-            name={props.leftIcon}
-            size={16}
-            color={colors[(props.variant as keyof typeof colors) || "default"]}
-          />
+          <Icon name={props.leftIcon} size={16} color={colors[(props.variant as keyof typeof colors) || "default"]} />
         )}
-        <Text
-          style={tw.style(
-            `capitalize`,
-            buttonTextVariants({ variant: props.variant, size: props.size })
-          )}
-        >
+        <Text style={tw.style(`capitalize`, buttonTextVariants({ variant: props.variant, size: props.size }))}>
           {props.label}
         </Text>
         {props.rightIcon && (
-          <Icon
-            name={props.rightIcon}
-            size={16}
-            color={colors[(props.variant as keyof typeof colors) || "default"]}
-          />
+          <Icon name={props.rightIcon} size={16} color={colors[(props.variant as keyof typeof colors) || "default"]} />
         )}
       </>
     </Pressable>

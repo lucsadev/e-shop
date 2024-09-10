@@ -1,9 +1,9 @@
 import { TextInput as DefaultTextInput } from "react-native-paper";
-import tw from "../../lib/tailwind";
-import { primaryColorLight } from "@/src/constants/Colors";
+import { tw } from "@/lib";
+import { primaryColorLight } from "@/constants/Colors";
 
 type TextInputProps = React.ComponentProps<typeof DefaultTextInput> & {
-    styles?: string
+  styles?: string;
 };
 
 export function TextInput(props: TextInputProps) {

@@ -1,4 +1,4 @@
-import { CategoriesScreen } from "@/src/views";
+import { CategoriesScreen } from "@/views";
 
 export default function categoriesPage() {
   return <CategoriesScreen />
