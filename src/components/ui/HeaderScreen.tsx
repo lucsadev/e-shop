@@ -2,26 +2,24 @@ import { View, Text } from "react-native";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Searchbar } from "react-native-paper";
-import { useState } from "react";
 import { tw } from "@/src/lib";
 import { LinearGradient } from "expo-linear-gradient";
-import { useNavigation } from "expo-router";
-import { DrawerActions } from "@react-navigation/native";
-import type { DrawerHeaderProps } from "@react-navigation/drawer";
+import { useProductsStore } from "@/src/store";
+import { router } from "expo-router";
 
-export function Header(props: DrawerHeaderProps) {
+export function HeaderScreen() {
   const { top } = useSafeAreaInsets();
-  const {dispatch} = useNavigation();
-  const [searchQuery, setSearchQuery] = useState("");
+  const searchQuery = useProductsStore.use.searchQuery();
+  const setSearchQuery = useProductsStore.use.setSearchQuery();
 
   return (
-    <LinearGradient style={tw`h-30 pt-5`} colors={["#50072488","#50072444" ]}>
+    <LinearGradient style={tw`h-40`} colors={["#50072488", "#F2F2F2"]}>
       <View style={tw`h-20 mt-[${top}] px-2`}>
         <View>
           <Text style={tw`text-xl font-bold text-center`}>E-Shop</Text>
         </View>
         <View style={tw`flex-1 w-full flex-row justify-between items-center`}>
-          <Icon name="menu" size={26} color="black" onPress={() => dispatch(DrawerActions.toggleDrawer())} />
+          <Icon name="arrow-left" size={26} color="black"  onPress={() => router.back()}/>
           <Searchbar
             onChangeText={setSearchQuery}
             value={searchQuery}

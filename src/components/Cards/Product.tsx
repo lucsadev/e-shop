@@ -4,6 +4,7 @@ import { AdvancedImage } from "cloudinary-react-native";
 import { Pressable } from "react-native";
 import { Card, Text } from "react-native-paper";
 import type { IProduct } from "@/src/types/models";
+import { router } from "expo-router";
 
 const noImage = "https://robmflyfegerrawawpxk.supabase.co/storage/v1/object/public/images/categories/no-image.png";
 
@@ -14,8 +15,7 @@ export function ProductCard(product: IProduct) {
     <Card style={tw`w-44 rounded-md overflow-hidden`}>
       <Pressable
         style={({ pressed }) => tw`w-full h-44 rounded-md overflow-hidden ${pressed ? "bg-blue-100" : "bg-gray-200"}`}
-        onPress={() => {console.log(product.name)}}
-        onLongPress={() => {console.log(product.id)}}
+        onPress={() => router.push(`/details/${product.id}`)}       
       >
         <AdvancedImage cldImg={myImage} style={tw`w-full h-44`} />
       </Pressable>

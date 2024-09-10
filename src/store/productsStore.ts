@@ -9,32 +9,34 @@ export interface IDataDB {
   categories: CategoryType[];
 }
 
-export const noFilterCategory = "00000000-0000-0000-0000-000000000000";
+//export const noFilterCategory = "00000000-0000-0000-0000-000000000000";
 
 interface IState extends IDataDB {
-  filterCategory: string;
   filterGender: string;
+  searchQuery: string;
 }
 
 interface IActions {
   addProducts: ({ products, categories }: IDataDB) => void;
-  setFilterCategory: (category: string) => void;
   toggleFilterGender: (gender: string) => void;
+  resetFilterGender: () => void;
+  setSearchQuery: (query: string) => void;
 }
 
 const INItIAL_STATE: IState = {
   products: [],
   categories: [],
-  filterCategory: noFilterCategory,
   filterGender: "",
+  searchQuery: "",
 };
 
 const productsStoreBase = create<IState & IActions>()(
   devtools((set, get) => ({
     ...INItIAL_STATE,
     addProducts: ({ products, categories }: IDataDB) => set({ products, categories }),
-    setFilterCategory: (category: string) => set({ filterCategory: category }),
     toggleFilterGender: (gender: string) => set({ filterGender: gender === get().filterGender ? "" : gender }),
+    resetFilterGender: () => set({ filterGender: "" }),
+    setSearchQuery: (query: string) => set({ searchQuery: query }),
   }))
 );
 

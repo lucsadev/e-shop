@@ -1,11 +1,11 @@
-import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { Drawer } from "expo-router/drawer";
-import * as SplashScreen from "expo-splash-screen";
+//import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import "react-native-reanimated";
-import { Header } from "./../src/components/ui";
 import { queryAllProducts } from "@/src/db/queries/products";
-import { useProductsStore } from './../src/store';
+import { useProductsStore } from "./../src/store";
+import { Stack } from "expo-router";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { HeaderScreen } from "@/src/components/ui";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -13,34 +13,34 @@ export {
 } from "expo-router";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync();
+//SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
- const addProducts = useProductsStore.use.addProducts()
+  const addProducts = useProductsStore.use.addProducts();
 
   useEffect(() => {
-    queryAllProducts()
-      .then((data) => data && addProducts(data))
-      .finally(() => SplashScreen.hideAsync());
+    queryAllProducts().then((data) => data && addProducts(data));
+    //<      .finally(() => SplashScreen.hideAsync());
   }, []);
 
   return <RootLayoutNav />;
 }
 
 function RootLayoutNav() {
+  const categories = useProductsStore.use.categories();
+
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <Drawer
+      <Stack
         screenOptions={{
-          headerTitleAlign: "center",
-          drawerActiveBackgroundColor: "transparent",
-          drawerActiveTintColor: '#50072488',                    
-          header: (props) => <Header {...props} />,
+          header: () => <HeaderScreen />,
         }}
-      >
-        <Drawer.Screen name="index" options={{ title: "Inicio" }} />
-        <Drawer.Screen name="profile" options={{ title: "Perfil" }} />
-      </Drawer>
+      >       
+        <Stack.Screen name="(drawer)" options={{ headerShown: false }} />
+        <Stack.Screen name="profile"/>
+        <Stack.Screen name="categories"/>
+        <Stack.Screen name="details"/>
+      </Stack>
     </GestureHandlerRootView>
   );
 }

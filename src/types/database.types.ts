@@ -47,17 +47,14 @@ export type Database = {
       categories: {
         Row: {
           id: string
-          image: string | null
           name: string
         }
         Insert: {
           id?: string
-          image?: string | null
           name: string
         }
         Update: {
           id?: string
-          image?: string | null
           name?: string
         }
         Relationships: []

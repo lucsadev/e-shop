@@ -21,3 +21,4 @@ export interface IProductsResponse {
     stock: number;
     products: ProductType;
 }
+r

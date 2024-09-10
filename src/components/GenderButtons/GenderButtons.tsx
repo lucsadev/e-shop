@@ -21,21 +21,21 @@ export const GenderButtons = () => {
       )}
     >
       <Text
-        style={tw(`text-center font-bold text-gray-400 text-lg w-1/3 h-full shadow ${filterGender === "Unisex" ? "bg-[#500724]" : "bg-background"}`)}
+        style={tw(`text-center font-bold text-gray-400 text-lg w-1/3 h-full shadow ${filterGender === "Unisex" ? "bg-[#500724] text-white" : "bg-background"}`)}
         onPress={() => toggleFilterGender("Unisex")}
       >
         Unisex
       </Text>
       <View style={tw(`border-l border-gray-300 w-[1px] h-full`)} />
       <Text
-        style={tw(`text-center font-bold text-gray-400 text-lg w-1/3 h-full shadow ${filterGender === "Men" ? "bg-[#500724]" : "bg-background"}`)}
+        style={tw(`text-center font-bold text-gray-400 text-lg w-1/3 h-full shadow ${filterGender === "Men" ? "bg-[#500724] text-white" : "bg-background"}`)}
         onPress={() => toggleFilterGender("Men")}
       >
         Hombre
       </Text>
       <View style={tw(`border-l border-gray-300 w-[1px] h-full`)} />
       <Text
-        style={tw(`text-center font-bold text-gray-400 text-lg w-1/3 h-full shadow ${filterGender === "Women" ? "bg-[#500724]" : "bg-background"}`)}
+        style={tw(`text-center font-bold text-gray-400 text-lg w-1/3 h-full shadow ${filterGender === "Women" ? "bg-[#500724] text-white" : "bg-background"}`)}
         onPress={() => toggleFilterGender("Women")}
       >
         Mujer
